@@ -44,10 +44,10 @@ scene.add(gridHelper)
 
 
 
-const spaceTexture = new THREE.TextureLoader().load("./space.jpg")
+const spaceTexture = new THREE.TextureLoader().load("./static/space.jpg")
 scene.background = spaceTexture;
 
-const normalTexture = new THREE.TextureLoader().load("./normal.jpg")
+const normalTexture = new THREE.TextureLoader().load("./static/normal.jpg")
 
 const lineMat = new THREE.LineBasicMaterial({
 	color: 0x00ff00
@@ -65,13 +65,13 @@ var neptunOrb = 449.5
 
 
 const jupiterTexture = new THREE.TextureLoader().load("./static/2k_jupiter.jpg")
-const marsTexture = new THREE.TextureLoader().load("/static/2k_mars.jpg")
-const mercuryTexture = new THREE.TextureLoader().load("static/2k_mercury.jpg")
-const uranusTexture = new THREE.TextureLoader().load("./2k_uranus.jpg")
-const venusTexture = new THREE.TextureLoader().load("./2k_venus_surface.jpg")
-const earthTexture = new THREE.TextureLoader().load("./2k_earth_daymap.jpg")
-const saturnTexture = new THREE.TextureLoader().load("./2k_saturn.jpg")
-const neptunTexture = new THREE.TextureLoader().load("./2k_neptune")
+const marsTexture = new THREE.TextureLoader().load("./static/2k_mars.jpg")
+const mercuryTexture = new THREE.TextureLoader().load("./static/2k_mercury.jpg")
+const uranusTexture = new THREE.TextureLoader().load("./static/2k_uranus.jpg")
+const venusTexture = new THREE.TextureLoader().load("./static/2k_venus_surface.jpg")
+const earthTexture = new THREE.TextureLoader().load("./static/2k_earth_daymap.jpg")
+const saturnTexture = new THREE.TextureLoader().load("./static/2k_saturn.jpg")
+const neptunTexture = new THREE.TextureLoader().load("./static/2k_neptune.jpg")
 
 
 function generatePlanet(texture, planetRad, orbitRad){
