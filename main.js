@@ -39,11 +39,11 @@ scene.add(ambientLight)
 
 const controls = new OrbitControls(camera, renderer.domElement)
 
-const gridHelper = new THREE.GridHelper(200, 50)
-scene.add(gridHelper)
+//const gridHelper = new THREE.GridHelper(200, 50)
+//scene.add(gridHelper)
 
 
-
+//asdf
 const spaceTexture = new THREE.TextureLoader().load("/space.jpg")
 scene.background = spaceTexture;
 
