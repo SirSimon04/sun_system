@@ -44,10 +44,10 @@ scene.add(gridHelper)
 
 
 
-const spaceTexture = new THREE.TextureLoader().load("./static/space.jpg")
+const spaceTexture = new THREE.TextureLoader().load("/space.jpg")
 scene.background = spaceTexture;
 
-const normalTexture = new THREE.TextureLoader().load("./static/normal.jpg")
+const normalTexture = new THREE.TextureLoader().load("/normal.jpg")
 
 const lineMat = new THREE.LineBasicMaterial({
 	color: 0x00ff00
