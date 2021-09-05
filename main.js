@@ -64,14 +64,14 @@ var uranusOrb = 287.2
 var neptunOrb = 449.5
 
 
-const jupiterTexture = new THREE.TextureLoader().load("./static/2k_jupiter.jpg")
-const marsTexture = new THREE.TextureLoader().load("./static/2k_mars.jpg")
-const mercuryTexture = new THREE.TextureLoader().load("./static/2k_mercury.jpg")
-const uranusTexture = new THREE.TextureLoader().load("./static/2k_uranus.jpg")
-const venusTexture = new THREE.TextureLoader().load("./static/2k_venus_surface.jpg")
-const earthTexture = new THREE.TextureLoader().load("./static/2k_earth_daymap.jpg")
-const saturnTexture = new THREE.TextureLoader().load("./static/2k_saturn.jpg")
-const neptunTexture = new THREE.TextureLoader().load("./static/2k_neptune.jpg")
+const jupiterTexture = new THREE.TextureLoader().load("/2k_jupiter.jpg")
+const marsTexture = new THREE.TextureLoader().load("/2k_mars.jpg")
+const mercuryTexture = new THREE.TextureLoader().load("/2k_mercury.jpg")
+const uranusTexture = new THREE.TextureLoader().load("/2k_uranus.jpg")
+const venusTexture = new THREE.TextureLoader().load("/2k_venus_surface.jpg")
+const earthTexture = new THREE.TextureLoader().load("/2k_earth_daymap.jpg")
+const saturnTexture = new THREE.TextureLoader().load("/2k_saturn.jpg")
+const neptunTexture = new THREE.TextureLoader().load("/2k_neptune.jpg")
 
 
 function generatePlanet(texture, planetRad, orbitRad){
