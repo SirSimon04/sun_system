@@ -130,40 +130,42 @@ scene.add(sun)
 
 
 function animate(){
-  var time = new Date() * 0.00025;
+  var time = new Date() * 0.00060;
   requestAnimationFrame(animate);
 
-  jupiter.rotation.y += 0.025;
-  jupiter.position.x = -Math.cos(time) * jupiterOrb
-  jupiter.position.z = -Math.sin(time) * jupiterOrb
 
-  mars.rotation.y += 0.025;
-  mars.position.x = -Math.cos(time) * marsOrb
-  mars.position.z = -Math.sin(time) * marsOrb
-
+  //eine Erdumrundung dauert eine Minute, andere Zeiten sind daran angepasst
   mercury.rotation.y += 0.025;
-  mercury.position.x = -Math.cos(time) * mercuryOrb
-  mercury.position.z = -Math.sin(time) * mercuryOrb
-  
-  uranus.rotation.y += 0.025;
-  uranus.position.x = -Math.cos(time) * uranusOrb
-  uranus.position.z = -Math.sin(time) * uranusOrb
-  
+  mercury.position.x = -Math.cos(time * 4.15) * mercuryOrb
+  mercury.position.z = -Math.sin(time * 4.15) * mercuryOrb
+
   venus.rotation.y += 0.025;
-  venus.position.x = -Math.cos(time) * venusOrb
-  venus.position.z = -Math.sin(time) * venusOrb
+  venus.position.x = -Math.cos(time * 1.62) * venusOrb
+  venus.position.z = -Math.sin(time * 1.62) * venusOrb
   
   earth.rotation.y += 0.025;
   earth.position.x = -Math.cos(time) * earthOrb
   earth.position.z = -Math.sin(time) * earthOrb
 
-  saturn.rotation.y += 0.025;
-  saturn.position.x = -Math.cos(time) * saturnOrb
-  saturn.position.z = -Math.sin(time) * saturnOrb
+  mars.rotation.y += 0.025;
+  mars.position.x = -Math.cos(time * 0.53) * marsOrb
+  mars.position.z = -Math.sin(time * 0.53) * marsOrb
 
+  jupiter.rotation.y += 0.025;
+  jupiter.position.x = -Math.cos(time * 0.0843) * jupiterOrb
+  jupiter.position.z = -Math.sin(time * 0.0843) * jupiterOrb
+
+  saturn.rotation.y += 0.025;
+  saturn.position.x = -Math.cos(time * 0.03395) * saturnOrb
+  saturn.position.z = -Math.sin(time * 0.03395) * saturnOrb
+  
+  uranus.rotation.y += 0.025;
+  uranus.position.x = -Math.cos(time * 0.0119) * uranusOrb
+  uranus.position.z = -Math.sin(time * 0.0119) * uranusOrb
+  
   neptune.rotation.y += 0.025;
-  neptune.position.x = -Math.cos(time) * neptunOrb
-  neptune.position.z = -Math.sin(time) * neptunOrb
+  neptune.position.x = -Math.cos(time * 0.006068) * neptunOrb
+  neptune.position.z = -Math.sin(time * 0.006068) * neptunOrb
 
   controls.update();
 
