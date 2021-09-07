@@ -79,7 +79,7 @@ const neptunTexture = new THREE.TextureLoader().load("/2k_neptune.jpg")
 const sunTexture = new THREE.TextureLoader().load("/sun_texture.jpg")
 
 
-
+var orbits = []
 
 function generatePlanet(texture, planetRad, orbitRad){
   const planet = new THREE.Mesh(
@@ -94,6 +94,8 @@ function generatePlanet(texture, planetRad, orbitRad){
 
   var points = []
 
+  
+
   for(let i = 0; i <= 360; i++){
     //points.push(Math.sin(i*(Math.PI/180))*radius, Math.cos(i*(Math.PI/180))*radius, 0);
     points.push(new THREE.Vector3(Math.sin(i*(Math.PI/180))*orbitRad,  0, Math.cos(i*(Math.PI/180))*orbitRad))
@@ -103,11 +105,14 @@ function generatePlanet(texture, planetRad, orbitRad){
 
   const line = new THREE.Line(lineGeo, lineMat)
 
-  scene.add(line)
+  // scene.add(line)
+  orbits.push(line)
 
   return planet;
 
 }
+
+
 
 var jupiter = generatePlanet(jupiterTexture, 13.8, jupiterOrb)
 var mars = generatePlanet(marsTexture, 0.6, marsOrb)
@@ -117,6 +122,20 @@ var venus = generatePlanet(venusTexture, 1.2, venusOrb)
 var earth = generatePlanet(earthTexture, 1.2, earthOrb)
 var saturn = generatePlanet(saturnTexture, 11.4, saturnOrb)
 var neptune = generatePlanet(neptunTexture, 4.9, neptunOrb)
+
+function addOrbits(){
+  for(let i of orbits){
+    scene.add(i)
+  }
+}
+addOrbits();
+
+function removeOrbits(){
+  for(let i of orbits){
+    scene.remove(i)
+  }
+}
+
 
 
 const sun = new THREE.Mesh(
@@ -174,3 +193,39 @@ function animate(){
 }
 
 animate()
+
+
+/**
+ * Sizes
+ */
+ const sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight
+}
+
+window.addEventListener('resize', () =>
+{
+  // Update sizes
+  sizes.width = window.innerWidth
+  sizes.height = window.innerHeight
+
+  // Update camera
+  camera.aspect = sizes.width / sizes.height
+  camera.updateProjectionMatrix()
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+
+document.getElementById("orbits").onclick = function () { 
+  var checkbox = document.getElementById("orbits")
+
+  if(checkbox.checked == true){
+    addOrbits();
+  }
+  else{
+    removeOrbits();
+  }
+};
+
