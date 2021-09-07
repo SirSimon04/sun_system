@@ -15,7 +15,8 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(300);
+camera.position.setY(300)
 
 renderer.render(scene, camera);
 
@@ -53,15 +54,18 @@ const lineMat = new THREE.LineBasicMaterial({
 	color: 0x00ff00
 });
 
+
+const sunRad = 139.2
+
 //https://astrokramkiste.de/planeten-tabelle
-var mercuryOrb = 5.8
-var venusOrb = 10.8
-var earthOrb = 15
-var marsOrb = 22.8
-var jupiterOrb = 77.8
-var saturnOrb = 147.2
-var uranusOrb = 287.2
-var neptunOrb = 449.5
+var mercuryOrb = 5.8  + sunRad;  
+var venusOrb = 10.8 + sunRad;
+var earthOrb = 15 + sunRad;
+var marsOrb = 22.8 + sunRad;
+var jupiterOrb = 77.8 + sunRad;
+var saturnOrb = 147.2 + sunRad;
+var uranusOrb = 287.2 + sunRad;
+var neptunOrb = 449.5 + sunRad;
 
 
 const jupiterTexture = new THREE.TextureLoader().load("/2k_jupiter.jpg")
@@ -72,6 +76,9 @@ const venusTexture = new THREE.TextureLoader().load("/2k_venus_surface.jpg")
 const earthTexture = new THREE.TextureLoader().load("/2k_earth_daymap.jpg")
 const saturnTexture = new THREE.TextureLoader().load("/2k_saturn.jpg")
 const neptunTexture = new THREE.TextureLoader().load("/2k_neptune.jpg")
+const sunTexture = new THREE.TextureLoader().load("/sun_texture.jpg")
+
+
 
 
 function generatePlanet(texture, planetRad, orbitRad){
@@ -110,6 +117,16 @@ var venus = generatePlanet(venusTexture, 1.2, venusOrb)
 var earth = generatePlanet(earthTexture, 1.2, earthOrb)
 var saturn = generatePlanet(saturnTexture, 11.4, saturnOrb)
 var neptune = generatePlanet(neptunTexture, 4.9, neptunOrb)
+
+
+const sun = new THREE.Mesh(
+  new THREE.SphereGeometry(sunRad, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: sunTexture,
+    normalMap: normalTexture
+  })
+)
+scene.add(sun)
 
 
 function animate(){
