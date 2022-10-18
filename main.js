@@ -50,7 +50,8 @@ const lineMat = new THREE.LineBasicMaterial({
   color: 0x00ff00,
 });
 
-var sunRad = 139.2 / 2;
+var sunRad = 34.8171;
+//696.342
 //https://astrokramkiste.de/planeten-tabelle
 var mercuryOrb = 5.8 + sunRad;
 var venusOrb = 10.8 + sunRad;
